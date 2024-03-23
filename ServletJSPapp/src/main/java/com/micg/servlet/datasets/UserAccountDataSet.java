@@ -22,7 +22,7 @@ public class UserAccountDataSet implements Serializable {
     @Column(name = "email", updatable = false)
     private String email;
 
-    public UserAccountDataSet() {
+    protected UserAccountDataSet() {
     }
 
     public UserAccountDataSet(String login, String password, String email) {
