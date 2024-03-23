@@ -19,7 +19,7 @@ public class AccountService {
 
     public static UserAccountDataSet getUserByLogin(String login) {
         Session session = sessionFactory.openSession();
-        UserAccountDataSet result =  UsersDAO.getUserByLogin(session, login);
+        UserAccountDataSet result = UsersDAO.getUserByLogin(session, login);
         session.close();
 
         return result;

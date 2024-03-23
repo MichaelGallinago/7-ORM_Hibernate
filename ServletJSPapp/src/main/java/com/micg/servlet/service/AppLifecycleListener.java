@@ -17,11 +17,12 @@ public class AppLifecycleListener implements ServletContextListener {
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "validate";
     public static SessionFactory sessionFactory;
+
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         sessionFactory = createSessionFactory(getConfiguration());
     }
-    @SuppressWarnings("UnusedDeclaration")
+
     private Configuration getConfiguration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UserAccountDataSet.class);
@@ -35,12 +36,14 @@ public class AppLifecycleListener implements ServletContextListener {
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
     }
+
     private SessionFactory createSessionFactory(Configuration configuration) {
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
         ServiceRegistry serviceRegistry = builder.build();
         return configuration.buildSessionFactory(serviceRegistry);
     }
+
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         sessionFactory.close();

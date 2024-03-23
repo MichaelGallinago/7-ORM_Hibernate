@@ -20,10 +20,10 @@ public class FileManagerServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
-        String login = (String)request.getSession().getAttribute("login");
-        String password = (String)request.getSession().getAttribute("password");
+        String login = (String) request.getSession().getAttribute("login");
+        String password = (String) request.getSession().getAttribute("password");
         if (login == null || password == null) {
-            response.sendRedirect( "/login");
+            response.sendRedirect("/login");
             return;
         }
 

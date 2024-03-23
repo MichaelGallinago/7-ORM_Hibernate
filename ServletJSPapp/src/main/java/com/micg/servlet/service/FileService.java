@@ -13,7 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FileService {
-
     public static final String userDirectoriesPath = "C:\\Users\\micha\\fileManager\\";
 
     private static List<FileSystemItem> fileSystemElementsInCurrentDir = new ArrayList<>();

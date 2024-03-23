@@ -40,7 +40,7 @@ public class SessionsServlet extends HttpServlet {
         }
 
         var session = request.getSession();
-        session.setAttribute("login",login);
+        session.setAttribute("login", login);
         session.setAttribute("password", password);
 
         String currentURL = request.getRequestURL().toString();
